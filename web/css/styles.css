@@ -1,0 +1,166 @@
+/* styles.css */
+
+/* Reset de base */
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, form, input, textarea, button {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1;
+    background-color: #f4f4f4; /* Fond gris clair */
+    color: #333; /* Texte gris foncé */
+}
+
+/* Styles généraux */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff; /* Fond blanc pour les conteneurs */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #007bff; /* Bleu pour les titres h1 */
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+p {
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+ul, ol {
+    margin-bottom: 15px;
+}
+
+ul li, ol li {
+    margin-left: 20px;
+    line-height: 1.6;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Styles pour les formulaires */
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input, form textarea, form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+form button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+/* Styles pour les tableaux */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+/* Styles spécifiques aux pages d'authentification (login.html, signup.html) */
+.auth-container {
+    width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.auth-container h2 {
+    margin-bottom: 20px;
+}
+
+.auth-container form {
+    text-align: left;
+}
+
+/* Styles spécifiques au tableau de bord (dashboard.html) */
+.dashboard-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.dashboard-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.dashboard-card h3 {
+    margin-bottom: 10px;
+}
+
+/* Styles spécifiques aux pages d'administration, enseignants, parents, étudiants */
+.admin-container, .teacher-container, .parent-container, .student-container {
+    /* Styles spécifiques à chaque rôle */
+}
+
+/* Styles spécifiques aux pages de finance, discipline, études, direction */
+.finance-container, .discipline-container, .studies-container, .headmaster-container {
+    /* Styles spécifiques à chaque section */
+}
+
+/* Ajoutez d'autres styles spécifiques à vos pages ici */

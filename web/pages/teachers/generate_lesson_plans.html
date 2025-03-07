@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Génération des fiches de préparation</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/teacher.css">
+</head>
+<body>
+    <header>
+        <h1>Génération des fiches de préparation</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Générer une fiche de préparation</h2>
+            <form id="generateLessonPlanForm">
+                <label for="course">Cours :</label>
+                <select id="course" name="course"></select>
+
+                <label for="topic">Sujet :</label>
+                <input type="text" id="topic" name="topic">
+
+                <button type="submit">Générer</button>
+            </form>
+        </section>
+        <section>
+            <h2>Fiches de préparation générées</h2>
+            <div id="generatedLessonPlans"></div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 My School BOBOTO</p>
+    </footer>
+    <script src="../../js/api.js"></script>
+    <script src="../../js/teacher.js"></script>
+</body>
+</html>

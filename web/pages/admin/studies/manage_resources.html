@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des ressources</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/admin.css">
+</head>
+<body>
+    <header>
+        <h1>Gestion des ressources</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Ajouter une ressource</h2>
+            <form id="createResourceForm">
+                <label for="title">Titre :</label>
+                <input type="text" id="title" name="title">
+
+                <label for="url">URL :</label>
+                <input type="url" id="url" name="url">
+
+                <button type="submit">Ajouter</button>
+            </form>
+        </section>
+        <section>
+            <h2>Liste des ressources</h2>
+            <table id="resourcesTable">
+                <thead>
+                    <tr>
+                        <th>Titre</th>
+                        <th>URL</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 My School BOBOTO</p>
+    </footer>
+    <script src="../../js/api.js"></script>
+    <script src="../../js/studies.js"></script>
+</body>
+</html>

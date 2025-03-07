@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des utilisateurs</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/admin.css">
+</head>
+<body>
+    <header>
+        <h1>Gestion des utilisateurs</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Créer un utilisateur</h2>
+            <form id="createUserForm">
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email">
+
+                <label for="role">Rôle :</label>
+                <select id="role" name="role">
+                    <option value="admin">Administrateur</option>
+                    <option value="teacher">Enseignant</option>
+                    <option value="parent">Parent</option>
+                    <option value="student">Étudiant</option>
+                </select>
+
+                <button type="submit">Créer</button>
+            </form>
+        </section>
+        <section>
+            <h2>Liste des utilisateurs</h2>
+            <table id="usersTable">
+                <thead>
+                    <tr>
+                        <th>Email</th>
+                        <th>Rôle</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 My School BOBOTO</p>
+    </footer>
+    <script src="../../js/api.js"></script>
+    <script src="../../js/studies.js"></script>
+</body>
+</html>

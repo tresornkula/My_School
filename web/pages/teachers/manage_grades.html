@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Notes - Enseignant</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/teacher.css">
+</head>
+<body>
+    <div class="teacher-dashboard">
+        <h1>Gestion des Notes</h1>
+
+        <div class="teacher-menu">
+            <a href="teacher_dashboard.html">Tableau de Bord</a>
+            <a href="generate_lesson_plans.html">Plans de Cours</a>
+            <a href="manage_attendance.html">Gestion des Présences</a>
+            <a href="manage_grades.html" class="active">Gestion des Notes</a>
+            <a href="manage_resources.html">Gestion des Ressources</a>
+        </div>
+
+        <div class="teacher-content">
+            <h2>Saisie des Notes</h2>
+            <form id="grade-form">
+                <label for="student">Étudiant:</label>
+                <select id="student" name="student">
+                    </select>
+
+                <label for="course">Cours:</label>
+                <select id="course" name="course">
+                    </select>
+
+                <label for="grade">Note:</label>
+                <input type="number" id="grade" name="grade" min="0" max="20" required>
+
+                <button type="submit">Enregistrer la Note</button>
+            </form>
+
+            <h2>Liste des Notes</h2>
+            <table id="grade-table">
+                <thead>
+                    <tr>
+                        <th>Étudiant</th>
+                        <th>Cours</th>
+                        <th>Note</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../../js/api.js"></script>
+    <script src="../../js/teacher.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const gradeForm = document.getElementById('grade-form');
+            const gradeTable = document.getElementById('grade-table').querySelector('tbody');
+            const studentSelect = document.getElementById('student');
+            const courseSelect = document.getElementById('course');
+
+            // Fonction pour charger les étudiants dans le select
+            const loadStudents = async () => {
+                try {
+                    const students = await api.get('/api/students'); // Supposons une API pour récupérer les étudiants
+                    students.forEach(student => {
+                        const option = document.createElement('option');
+                        option.value = student.id;
+                        option.textContent = student.name;
+                        studentSelect.appendChild(option);
+                    });
+                } catch (error) {
+                    console.error('Erreur lors du chargement des étudiants:', error);
+                }
+            };
+
+            // Fonction pour charger les cours dans le select
+            const loadCourses = async () => {
+                try {
+                    const courses = await api.get('/api/courses'); // Supposons une API pour récupérer les cours
+                    courses.forEach(course => {
+                        const option = document.createElement('option');
+                        option.value = course.id;
+                        option.textContent = course.name;
+                        courseSelect.appendChild(option);
+                    });
+                } catch (error) {
+                    console.error('Erreur lors du chargement des cours:', error);
+                }
+            };
+
+            // Fonction pour charger les notes dans le tableau
+            const loadGrades = async () => {
+                try {
+                    const grades = await api.get('/api/grades'); // Supposons une API pour récupérer les notes
+                    gradeTable.innerHTML = ''; // Effacer le contenu précédent
+                    grades.forEach(grade => {
+                        const row = gradeTable.insertRow();
+                        const studentCell = row.insertCell();
+                        const courseCell = row.insertCell();
+                        const gradeCell = row.insertCell();
+
+                        // Remplacer par les noms réels des étudiants et des cours
+                        studentCell.textContent = grade.studentName;
+                        courseCell.textContent = grade.courseName;
+                        gradeCell.textContent = grade.grade;
+                    });
+                } catch (error) {
+                    console.error('Erreur lors du chargement des notes:', error);
+                }
+            };
+
+            // Gestionnaire d'événement pour le formulaire de saisie des notes
+            gradeForm.addEventListener('submit', async (event) => {
+                event.preventDefault();
+                const studentId = studentSelect.value;
+                const courseId = courseSelect.value;
+                const grade = document.getElementById('grade').value;
+
+                try {
+                    await api.post('/api/grades', { studentId, courseId, grade }); // Supposons une API pour enregistrer les notes
+                    loadGrades(); // Recharger les notes après l'enregistrement
+                    gradeForm.reset(); // Réinitialiser le formulaire
+                } catch (error) {
+                    console.error('Erreur lors de l\'enregistrement de la note:', error);
+                }
+            });
+
+            // Charger les données initiales
+            loadStudents();
+            loadCourses();
+            loadGrades();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+/* Styles spécifiques à l'administrateur */
+
+.admin-dashboard {
+    background-color: #f0f8ff; /* Couleur de fond spécifique */
+    padding: 20px;
+  }
+  
+  .admin-dashboard h1 {
+    color: #007bff; /* Couleur du titre */
+  }
+  
+  .admin-menu {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .admin-menu button {
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .admin-menu button:hover {
+    background-color: #0056b3;
+  }
+  
+  .admin-content {
+    margin-top: 20px;
+  }
+  
+  /* Ajoutez d'autres styles spécifiques à l'administrateur ici */

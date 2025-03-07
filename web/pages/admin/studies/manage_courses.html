@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des cours</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/admin.css">
+</head>
+<body>
+    <header>
+        <h1>Gestion des cours</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Créer un cours</h2>
+            <form id="createCourseForm">
+                <label for="name">Nom :</label>
+                <input type="text" id="name" name="name">
+
+                <label for="teacher">Enseignant :</label>
+                <select id="teacher" name="teacher"></select>
+
+                <button type="submit">Créer</button>
+            </form>
+        </section>
+        <section>
+            <h2>Liste des cours</h2>
+            <table id="coursesTable">
+                <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Enseignant</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 My School BOBOTO</p>
+    </footer>
+    <script src="../../js/api.js"></script>
+    <script src="../../js/studies.js"></script>
+</body>
+</html>

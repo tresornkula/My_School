@@ -1,0 +1,28 @@
+/* Styles spécifiques à l'étudiant */
+
+.student-dashboard {
+    background-color: #f9f9f9;
+    padding: 20px;
+  }
+  
+  .student-dashboard h1 {
+    color: #dc3545; /* Couleur du titre */
+  }
+  
+  .student-info {
+    margin-bottom: 20px;
+  }
+  
+  .student-info h2 {
+    color: #dc3545;
+  }
+  
+  .student-info p {
+    line-height: 1.6;
+  }
+  
+  .student-assignments, .student-grades, .student-resources{
+    margin-top: 20px;
+  }
+  
+  /* Ajoutez d'autres styles spécifiques à l'étudiant ici */

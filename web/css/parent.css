@@ -1,0 +1,28 @@
+/* Styles spécifiques au parent */
+
+.parent-dashboard {
+    background-color: #f8f8f8;
+    padding: 20px;
+  }
+  
+  .parent-dashboard h1 {
+    color: #28a745; /* Couleur du titre */
+  }
+  
+  .parent-info {
+    margin-bottom: 20px;
+  }
+  
+  .parent-info h2 {
+    color: #28a745;
+  }
+  
+  .parent-info p {
+    line-height: 1.6;
+  }
+  
+  .student-performance, .student-attendance{
+    margin-top: 20px;
+  }
+  
+  /* Ajoutez d'autres styles spécifiques au parent ici */

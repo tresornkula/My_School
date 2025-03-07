@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des notes</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/teacher.css">
+</head>
+<body>
+    <header>
+        <h1>Gestion des notes</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Enregistrer une note</h2>
+            <form id="gradeForm">
+                <label for="student">Étudiant :</label>
+                <select id="student" name="student"></select>
+
+                <label for="course">Cours :</label>
+                <select id="course" name="course"></select>
+
+                <label for="grade">Note :</label>
+                <input type="number" id="grade" name="grade">
+
+                <button type="submit">Enregistrer</button>
+            </form>
+        </section>
+        <section>
+            <h2>Liste des notes</h2>
+            <table id="gradesTable">
+                <thead>
+                    <tr>
+                        <th>Étudiant</th>
+                        <th>Cours</th>
+                        <th>Note</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 My School BOBOTO</p>
+    </footer>
+    <script src="../../js/api.js"></script>
+    <script src="../../js/teacher.js"></script>
+</body>
+</html>
